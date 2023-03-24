@@ -1,13 +1,12 @@
-import React, {useReducer} from "react";
+import React, { useReducer } from "react";
 import reducer from "../hooks/useReducer";
 
-
 const Counter = () => {
-  const [state, dispatch] = useReducer(reducer, {count: 0})
+  const [state, dispatch] = useReducer(reducer, { count: 0 });
 
   const generateStars = (count) => {
     return "⭐".repeat(count);
-  }
+  };
   return (
     <div>
       <div className="Counter">
@@ -29,7 +28,7 @@ const Counter = () => {
           Add 1
         </button>
       </div>
-      <div>
+      <div className="Star-div">
         <h1>{generateStars(state.count)}</h1>
       </div>
     </div>
