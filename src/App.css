@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+.App-header {
+  background-color: #343943;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:flex-start;
+  margin: 2rem;
+  padding: 2rem;
+  border: 1px solid blue
+}
+
+.Counter button {
+  color: white;
+  background-color: black;
+  min-height: 2.5rem;
+  min-width: 6rem;
+  max-height: 2rem;
+  max-width: 6rem;
+  font-size: 1rem;
+  border-radius: 6px;
+}
+
+.Counter-items {
+  margin: 2rem
+}
+
+img {
+  max-width: 30rem;
+}
