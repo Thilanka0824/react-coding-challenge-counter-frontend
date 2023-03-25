@@ -2,7 +2,7 @@ import React from 'react'
 import Logo from './Logo'
 import { Link } from 'react-router-dom'
 
-const Menu = () => {
+const Menu = () => { 
   return (
     <div>
        <h4>"THERE IS NO MENU!"</h4>

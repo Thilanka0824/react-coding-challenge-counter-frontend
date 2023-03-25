@@ -7,12 +7,6 @@
 }
 
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-
 .App-header {
   background-color: #fafafa;
   display: flex;
@@ -26,7 +20,7 @@
   background-color: #002855;
   color: white;
   padding: 1rem;
-  border-top: 4px solid #FFA500;
+  border-top: 15px solid #FFA500;
   position: fixed;
     bottom: 0;
     left: 0;
@@ -37,14 +31,24 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
+/* .gradient {
+  background-image: linear-gradient(to right, #002855, rgb(68, 66, 160));
+} */
+
+/* 
+.logo-img:hover {
+  animation: logo-img-spin 2s linear infinite
+}
+
+@keyframes logo-img-spin {
   from {
     transform: rotate(0deg);
+
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(360deg)
   }
-}
+} */
 
 nav {
   background-color: #002855;
@@ -72,15 +76,52 @@ nav a {
   color: white;
 }
 
+nav button {
+  color: white;
+    background-color: #002855;
+    border: #002855;
+    min-height: 2.5rem;
+    min-width: 6rem;
+    max-height: 2rem;
+    max-width: 6rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
 
+.dropdown {
+  position: absolute;
+  right: 0;
 
+  top: 100%;
+  /* transform: translate(-50%); */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  border-radius: 4px;
+  z-index: 1;
+  left: 80%;
+  /* width: calc(100vw -50%); */
+  font-size: 1rem;
+  /* min-width: 10rem; */
+}
+
+.dropdown a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #002855;
+}
+
+.dropdown a:hover {
+  background-color: #f1f1f1;
+}
 .Counter {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  margin: 2rem;
-  padding: 2rem;
+  margin: 5px;
+  padding: 10px;
   color: black;
   /* border: 1px solid blue */
 }
@@ -111,6 +152,11 @@ nav a {
 
 .Counter-items {
   margin: 10px 30px 8px 30px;
+}
+
+.pokemon-div {
+  margin: 100px;
+  padding: 50px;
 }
 
 img {
