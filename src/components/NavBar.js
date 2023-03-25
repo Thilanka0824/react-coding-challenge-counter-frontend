@@ -18,8 +18,8 @@ const NavBar = () => {
       {dropdownVisible && (
         <div className="dropdown">
           <Link to="pokemonpage">Pokemon</Link>
-          <Link>Two</Link>
-          <Link>Three</Link>
+          <Link to="redirect">Redirect</Link>
+          <Link to="fetchpage">Fetch Page</Link>
         </div>
       )}
     </nav>

@@ -3,8 +3,9 @@ import "./App.css";
 import GlobalLayout from "./layouts/GlobalLayout";
 import ErrorPage from "./pages/ErrorPage";
 import HomePage from "./pages/HomePage";
-import Menu from "./components/Menu";
 import PokemonPage from "./pages/PokemonPage";
+import Redirect from "./components/Redirect";
+import FetchPage from "./pages/FetchPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -18,12 +19,16 @@ function App() {
           element: <HomePage />,
         },
         {
-          path: "menu",
-          element: <Menu/>,
+          path: "redirect",
+          element: <Redirect/>,
         },
         {
           path: "pokemonpage",
           element: <PokemonPage/>,
+        },
+        {
+          path: "fetchpage",
+          element: <FetchPage/>
         }
       ],
     },
