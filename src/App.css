@@ -170,7 +170,7 @@ nav button {
   margin: 0 1rem;
   color: white;
   background-color: #007BFF;
-  border: #007BFF;
+  /* border: #007BFF; */
   min-height: 3.5rem;
   min-width: 6rem;
   max-height: 3.5rem;
@@ -182,7 +182,7 @@ nav button {
 .show-couples button:hover {
   color: white;
     background-color: #93C5FD;
-    border: #007BFF;
+    /* border: #007BFF; */
     min-height: 3.5rem;
     min-width: 6rem;
     max-height: 3.5rem;
@@ -204,10 +204,15 @@ nav button {
 .App-footer {
   background-color: #002855;
   color: white;
-  padding: 1rem;
+  /* padding: 1rem; */
   border-top: 15px solid #FFA500;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
 }

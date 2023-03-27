@@ -20,6 +20,7 @@ const NavBar = () => {
           <Link to="pokemonpage">Pokemon</Link>
           <Link to="redirect">Redirect</Link>
           <Link to="fetchpage">Fetch Page</Link>
+          <Link to="react-reducer">Reducer Notes Page</Link>
         </div>
       )}
     </nav>

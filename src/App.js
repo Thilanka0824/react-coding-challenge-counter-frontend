@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import PokemonPage from "./pages/PokemonPage";
 import Redirect from "./components/Redirect";
 import FetchPage from "./pages/FetchPage";
+import ReactReducerPage from "./pages/ReactReducerPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,6 +30,10 @@ function App() {
         {
           path: "fetchpage",
           element: <FetchPage/>
+        },
+        {
+          path: "react-reducer",
+          element: <ReactReducerPage/>
         }
       ],
     },
