@@ -17,6 +17,7 @@ const ReactReducerPage = () => {
     "Divide",
     "Power",
     "Remainder",
+    "Square Root"
   ];
 
 
@@ -33,6 +34,10 @@ const ReactReducerPage = () => {
       <button onClick={() => dispatch({
         type: 'RESET',
       })}>Reset</button>
+      <br></br>
+      <button onClick={() => dispatch({
+        type: "The Ultimate Answer"
+      })}>The Ultimate answer</button>
       <p>-------------------------------------------------------------</p>
       <br></br>
       {mathArr.map((expression) => {
