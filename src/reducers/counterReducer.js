@@ -1,6 +1,9 @@
 const counterReducer = (notesCounter, action) => {
   console.log(action);
   switch (action.type) {
+    case "RESET":
+      return 0;
+
     case "Increment":
       return notesCounter + 1;
 
@@ -29,10 +32,7 @@ const counterReducer = (notesCounter, action) => {
       return Math.sqrt(notesCounter);
 
     case "The Ultimate Answer":
-        return 42
-
-    case "RESET":
-      return 0;
+      return 42;
 
     default:
       throw console.error("Action not found");
