@@ -78,6 +78,40 @@ nav button {
   border-radius: 4px;
 }
 
+.product-card {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  background-color: #d5e6fa;
+  /* border: 2px solid black; */
+  border-radius: 20px;
+  /* margin-bottom: 120px; */
+}
+
+.product-card button {
+  color: white;
+    background-color: #007BFF;
+    border: #007BFF;
+    margin:5px;
+    min-height: 2.5rem;
+    min-width: 6rem;
+    max-height: 2rem;
+    max-width: 6rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.product-card button:hover {
+  color: white;
+    background-color: #93C5FD;
+    border: #007BFF;
+    min-height: 2.5rem;
+    min-width: 6rem;
+    max-height: 2rem;
+    max-width: 6rem;
+    font-size: 1rem;
+    border-radius: 4px;
+}
 .dropdown {
   position: absolute;
   right: 0;

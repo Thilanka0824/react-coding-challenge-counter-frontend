@@ -8,6 +8,7 @@ import Redirect from "./components/Redirect";
 import FetchPage from "./pages/FetchPage";
 import ReactReducerPage from "./pages/ReactReducerPage";
 import CounterPage from "./pages/CounterPage";
+import ProductsPage from "./pages/ProductsPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -39,6 +40,10 @@ function App() {
         {
           path: "counterpage",
           element: <CounterPage/>
+        },
+        {
+          path: "productspage",
+          element: <ProductsPage/>
         }
       ],
     },

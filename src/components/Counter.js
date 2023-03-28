@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import reducer from "../hooks/useReducer";
+import reducer from "../reducers/homeworkReducer";
 
 const Counter = () => {
   const [state, dispatch] = useReducer(reducer, { count: 0 });
