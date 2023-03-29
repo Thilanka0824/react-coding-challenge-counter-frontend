@@ -11,30 +11,71 @@ export const ProductCard = (props) => {
     price: props.price,
   });
 
-  //i want a functioning edit button
+  const handleInputChange = (e) => {
+    setEditProductState({
+      ...editProductState,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const editDataFunc = () => {
     props.editProduct(editProductState);
     setEditBtn(false);
   };
 
-  // dataFunc = () => {
-  //   props.data({
-  //     ...
-  //   })
-
-  // }
-
   return (
     <div className="product-card">
       <h2>
-        <u>{props.title}</u>
+        {editBtn ? (
+          <input
+            name="title"
+            value={editProductState.title}
+            onChange={handleInputChange}
+          />
+        ) : (
+          <u>{props.title}</u>
+        )}
       </h2>
-      <p>Publisher: {props.publisher}</p>
-      <p>Genre: {props.genre}</p>
-      <p>Price: ${props.price}</p>
+      <p>
+        Publisher:{" "}
+        {editBtn ? (
+          <input
+            name="publisher"
+            value={editProductState.publisher}
+            onChange={handleInputChange}
+          />
+        ) : (
+          props.publisher
+        )}
+      </p>
+      <p>
+        Genre:{" "}
+        {editBtn ? (
+          <input
+            name="genre"
+            value={editProductState.genre}
+            onChange={handleInputChange}
+          />
+        ) : (
+          props.genre
+        )}
+      </p>
+      <p>Price: {" "} 
+      {editBtn ? (
+        <input
+          name="price"
+          value={editProductState.price}
+          onChange={handleInputChange}
+        />
+      ) : (
+      `$${props.price}`
+      )}
+      </p>
 
-      {editBtn ? <p> True: Start editing</p> : <p>False</p>}
-      <button onClick={() => setEditBtn(!editBtn)}>Edit</button>
+      {editBtn ? (
+        <button onClick={editDataFunc}>Complete</button> ) :
+      (
+      <button onClick={() => setEditBtn(!editBtn)}>Edit</button>)}
       <button onClick={() => props.deleteProduct(props.id)}>Delete!</button>
     </div>
   );

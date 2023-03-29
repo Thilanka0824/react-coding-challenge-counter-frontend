@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useReducer } from "react";
 import productReducer from "../reducers/productReducer";
 import { ProductCard } from "../components/ProductCard";
 import { v4 as uuidv4 } from "uuid";
@@ -63,10 +63,12 @@ const ProductsPage = () => {
                 id: id,
               })
             }
-            editProduct={(data) => dispatch({
-                type: 'EDIT_PRODUCT',
-                data: data
-            })}
+            editProduct={(data) =>
+              dispatch({
+                type: "EDIT_PRODUCT",
+                data: data,
+              })
+            }
           />
         );
       })}
