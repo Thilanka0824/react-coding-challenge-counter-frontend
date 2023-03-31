@@ -22,7 +22,9 @@ const NavBar = () => {
           <Link to="redirect">Redirect</Link>
           <Link to="fetchpage">Fetch Page</Link>
           <Link to="react-reducer">Reducer Notes Page</Link>
-          <Link to="productspage">Products Page</Link>
+          <Link to="myproductspage"> My Products Page</Link>
+          <Link to="classproductspage"> Class Products Page</Link>
+
         </div>
       )}
     </nav>

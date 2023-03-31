@@ -3,7 +3,7 @@ import productReducer from "../reducers/productReducer";
 import { ProductCard } from "../components/ProductCard";
 import { v4 as uuidv4 } from "uuid";
 
-const ProductsPage = () => {
+const MyProductsPage = () => {
   const initialState = [
     {
       id: uuidv4(),
@@ -78,4 +78,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default MyProductsPage;
