@@ -6,6 +6,20 @@ import { v4 as uuidv4 } from "uuid";
 // import payload from '../payload.json'
 
 const ClassProductsPage = () => {
+const [randomUsers, setRandomUsers] = useState([])
+
+const fetchRandomUsers = async () => {
+  try {
+    const response = await fetch(
+      "http://localhost:4000/api/public-data/random-users"
+    );
+    const data = await response.json();
+    setRandomUsers(data.results);
+  } catch (error) {
+    console.error("Error fetching random users:", error);
+  }
+}
+
   const initialState = [
     {
       id: uuidv4(),
@@ -93,13 +107,17 @@ const ClassProductsPage = () => {
       >
         Payload
       </button> */}
+        <button className="add-blank-button" onClick={() => getData()}>
+          Payload
+        </button>
         <button
           className="add-blank-button"
-          onClick={() =>
-            getData()
-          }
+          onClick={() => {
+            fetchRandomUsers();
+            console.log(randomUsers);
+          }}
         >
-          Payload
+          Fetch Users
         </button>
       </div>
       {productState.map((product) => {
