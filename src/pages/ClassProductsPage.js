@@ -15,6 +15,7 @@ const fetchRandomUsers = async () => {
     );
     const data = await response.json();
     setRandomUsers(data.results);
+    console.log(randomUsers);
   } catch (error) {
     console.error("Error fetching random users:", error);
   }
@@ -114,7 +115,7 @@ const fetchRandomUsers = async () => {
           className="add-blank-button"
           onClick={() => {
             fetchRandomUsers();
-            console.log(randomUsers);
+            
           }}
         >
           Fetch Users

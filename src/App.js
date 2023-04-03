@@ -9,7 +9,8 @@ import FetchPage from "./pages/FetchPage";
 import ReactReducerPage from "./pages/ReactReducerPage";
 import CounterPage from "./pages/CounterPage";
 import MyProductsPage from "./pages/MyProductsPage";
-import ClassProductsPage from "./pages/ClassProductsPage"
+import ClassProductsPage from "./pages/ClassProductsPage";
+import { LoginContextPage } from "./pages/LoginContextPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -24,32 +25,36 @@ function App() {
         },
         {
           path: "redirect",
-          element: <Redirect/>,
+          element: <Redirect />,
         },
         {
           path: "pokemonpage",
-          element: <PokemonPage/>,
+          element: <PokemonPage />,
         },
         {
           path: "fetchpage",
-          element: <FetchPage/>
+          element: <FetchPage />,
         },
         {
           path: "react-reducer",
-          element: <ReactReducerPage/>
+          element: <ReactReducerPage />,
         },
         {
           path: "counterpage",
-          element: <CounterPage/>
+          element: <CounterPage />,
         },
         {
           path: "myproductspage",
-          element: <MyProductsPage/>
+          element: <MyProductsPage />,
         },
         {
           path: "classproductspage",
-          element: <ClassProductsPage/>
-        }
+          element: <ClassProductsPage />,
+        },
+        {
+          path: "login-context-page",
+          element: <LoginContextPage />,
+        },
       ],
     },
   ]);

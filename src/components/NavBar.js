@@ -24,6 +24,7 @@ const NavBar = () => {
           <Link to="react-reducer">Reducer Notes Page</Link>
           <Link to="myproductspage"> My Products Page</Link>
           <Link to="classproductspage"> Class Products Page</Link>
+          <Link to="login-context-page"> Login Context Page</Link>
 
         </div>
       )}
