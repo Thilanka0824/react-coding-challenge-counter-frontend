@@ -10,6 +10,7 @@ import ReactReducerPage from "./pages/ReactReducerPage";
 import CounterPage from "./pages/CounterPage";
 import MyProductsPage from "./pages/MyProductsPage";
 import ClassProductsPage from "./pages/ClassProductsPage";
+import HomeworkUseReducerApi from "./pages/HomeworkUseReducerApi";
 import { LoginContextPage } from "./pages/LoginContextPage";
 
 function App() {
@@ -54,6 +55,10 @@ function App() {
         {
           path: "login-context-page",
           element: <LoginContextPage />,
+        },
+        {
+          path: "homework-usereducer",
+          element: <HomeworkUseReducerApi/>
         },
       ],
     },

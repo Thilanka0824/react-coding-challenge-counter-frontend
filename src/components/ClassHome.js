@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
+// import { ThemeContext } from "../context/ThemeContext";
 import { ThemeContext } from "../context/ThemeContext";
 import "../components/ClassHome.css";
 
 const ClassHome = () => {
-  const { theme, setTheme, words } = useContext(ThemeContext);
-  const funcAlert = () => alert(words)
-  
+  const { theme, words, toggleTheme } = useContext(ThemeContext);
+  const funcAlert = () => alert(words);
+
   // const toggleTheme = () => {
   //   if(theme === 'dark') {
   //     setTheme("light")
@@ -14,9 +15,6 @@ const ClassHome = () => {
   //   }
   // }
 
-const toggleTheme = () => {
-  setTheme(theme === 'dark' ? 'light' : 'dark')
-}
   return (
     <>
       <div className={theme}>Home</div>

@@ -1,3 +1,4 @@
-import React, { createContext, useContext } from "react";
+// eslint-disable-next-line no-unused-vars
+import React, { createContext } from "react";
 
 export const ThemeContext = createContext(null);
