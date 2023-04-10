@@ -26,6 +26,7 @@ const NavBar = () => {
           <Link to="classproductspage"> Class Products Page</Link>
           <Link to="login-context-page"> Login Context Page</Link>
           <Link to="homework-usereducer">Homework UseReducer-Api Page</Link>
+          <Link to="class-login-page">Class Login Page</Link>
         </div>
       )}
     </nav>

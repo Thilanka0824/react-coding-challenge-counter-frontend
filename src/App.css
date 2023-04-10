@@ -33,8 +33,11 @@
 @keyframes logo-img-spin {
   from {
     transform: rotate(0deg);
-    
-  }to {}
+
+  }
+
+  to {}
+
   to {
     transform: rotate(360deg)
   }
@@ -90,29 +93,62 @@ nav button {
 
 .product-card button {
   color: white;
-    background-color: #007BFF;
-    border: #007BFF;
-    margin:5px;
-    min-height: 2.5rem;
-    min-width: 6rem;
-    max-height: 2rem;
-    max-width: 6rem;
-    font-size: 1rem;
-    border-radius: 4px;
+  background-color: #007BFF;
+  border: #007BFF;
+  margin: 5px;
+  min-height: 2.5rem;
+  min-width: 6rem;
+  max-height: 2rem;
+  max-width: 6rem;
+  font-size: 1rem;
+  border-radius: 4px;
 }
-.add-blank-button{
+
+.login-card {
+  /* background-color: rgb(226, 247, 254); */
+  background-color: #fbf2e2;;
+  border-radius: 20px;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card input{
+  border-radius: 5px;
+  height: 20px;
+  text-align: center;
+}
+
+.add-blank-button {
   color: white;
-    background-color: #007BFF;
-    border: #007BFF;
-    margin:5px;
-    min-height: 2.5rem;
-    min-width: 6rem;
-    max-height: 2rem;
-    max-width: 6rem;
-    font-size: 1rem;
-    border-radius: 4px;
-    
+  background-color: #0165d1;
+  border: #007BFF;
+  margin: 5px;
+  min-height: 2.5rem;
+  min-width: 6rem;
+  max-height: 2rem;
+  max-width: 6rem;
+  font-size: 1rem;
+  border-radius: 4px;
+
 }
+
+.add-blank-button:hover {
+  color: white;
+  background-color: #93C5FD;
+  border: #007BFF;
+  margin: 5px;
+  min-height: 2.5rem;
+  min-width: 6rem;
+  max-height: 2rem;
+  max-width: 6rem;
+  font-size: 1rem;
+  border-radius: 4px;
+
+}
+
 .button-container {
   display: flex;
   justify-content: center;
@@ -123,15 +159,16 @@ nav button {
 
 .product-card button:hover {
   color: white;
-    background-color: #93C5FD;
-    border: #007BFF;
-    min-height: 2.5rem;
-    min-width: 6rem;
-    max-height: 2rem;
-    max-width: 6rem;
-    font-size: 1rem;
-    border-radius: 4px;
+
+  border: #007BFF;
+  min-height: 2.5rem;
+  min-width: 6rem;
+  max-height: 2rem;
+  max-width: 6rem;
+  font-size: 1rem;
+  border-radius: 4px;
 }
+
 .dropdown {
   position: absolute;
   right: 0;
@@ -235,14 +272,14 @@ nav button {
 
 .show-couples button:hover {
   color: white;
-    background-color: #93C5FD;
-    /* border: #007BFF; */
-    min-height: 3.5rem;
-    min-width: 6rem;
-    max-height: 3.5rem;
-    max-width: 6rem;
-    font-size: 1rem;
-    border-radius: 4px;
+  background-color: #93C5FD;
+  /* border: #007BFF; */
+  min-height: 3.5rem;
+  min-width: 6rem;
+  max-height: 3.5rem;
+  max-width: 6rem;
+  font-size: 1rem;
+  border-radius: 4px;
 }
 
 .Star-div {

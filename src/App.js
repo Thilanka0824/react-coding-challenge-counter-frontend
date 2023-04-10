@@ -12,6 +12,7 @@ import MyProductsPage from "./pages/MyProductsPage";
 import ClassProductsPage from "./pages/ClassProductsPage";
 import HomeworkUseReducerApi from "./pages/HomeworkUseReducerApi";
 import { LoginContextPage } from "./pages/LoginContextPage";
+import ClassLoginPage from "./pages/ClassLoginPage";
 
 function App() {
   const router = createBrowserRouter([
@@ -59,6 +60,10 @@ function App() {
         {
           path: "homework-usereducer",
           element: <HomeworkUseReducerApi/>
+        },
+        {
+          path: "class-login-page",
+          element: <ClassLoginPage/>
         },
       ],
     },
