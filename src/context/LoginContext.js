@@ -8,6 +8,8 @@ export const LoginDispatchContext = createContext(null);
 const initialState = {
   username: "",
   password: "",
+  isAuth: false,
+  message: "Please Log In!",
 };
 export const LoginProvider = ({ children }) => {
   const [login, dispatch] = useReducer(loginReducer, initialState);
@@ -30,25 +32,10 @@ const loginReducer = (login, action) => {
     case "LOGIN":
       login.isAuth = false;
 
-      //   action.data.username === "Thilanka" ? (isAuth = true) : (isAuth = false);
-
-      //   const fetchLogin = async () => {
-      //     try {
-      //       let success = await fetch(baseURL + "/users/login/");
-      //       let data = await success.json();
-      //       console.log(data.message);
-      //     } catch (err) {}
-      //   };
-
-      // let response = fetchLogin();
-      // console.log("response:", response.data);
-
-      //  let user = action.data
       return {
         ...action.data,
-        // username: "Hello",
-        // password: response.data.user,
         isAuth: true,
+        message: `Thank you for logging in ${action.data.username}`,
       };
 
     case "LOGOUT":
@@ -64,6 +51,20 @@ const loginReducer = (login, action) => {
       return {
         ...action.data,
         isAuth: true,
+        message: `Thank you for registering ${action.data.username}!`,
+      };
+      case "DELETE":
+        return {
+          ...login,
+          isAuth: false,
+          message: action.data.message,
+        };
+    case "ERROR":
+      return {
+        username: "",
+        password: "",
+        isAuth: false,
+        message: action.data.message,
       };
     default:
       alert("Default");

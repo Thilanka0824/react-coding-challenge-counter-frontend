@@ -1,7 +1,11 @@
 import React, { useContext, useState } from "react";
 import { LoginContext, LoginDispatchContext } from "../context/LoginContext";
-import { ThemeContext } from "../context/ThemeContext";
-import { fetchLogin, register } from "../context/loginContextHelper";
+// import { ThemeContext } from "../context/ThemeContext";
+import {
+  fetchLogin,
+  register,
+  deleteUser,
+} from "../context/LoginContextHelper";
 
 const ClassLogin = () => {
   //   const theme = useContext(ThemeContext);
@@ -22,17 +26,32 @@ const ClassLogin = () => {
 
   return (
     <div className="login-card">
-      {login.isAuth ? <>
-      <h3>Username: {login.username}</h3>
-      <h3>Password: {login.password}</h3>
-       <button className="add-blank-button" 
-       onClick={()=> dispatch({
-        type: "LOGOUT",
-        data: loginState
-       })}>Logout</button>
-      </> : (
+      <h3>Message: {login.message}</h3>
+      {login.isAuth ? (
         <>
-          <p>Please Login: </p>
+          <h3>Username: {login.username}</h3>
+          <h3>Password: {login.password}</h3>
+          <button
+            className="add-blank-button"
+            onClick={() =>
+              dispatch({
+                type: "LOGOUT",
+                data: loginState,
+              })
+            }
+          >
+            Logout
+          </button>
+          <button
+            className="add-blank-button"
+            onClick={() => deleteUser(dispatch, login.username)}
+          >
+            Delete Me!
+          </button>
+        </>
+      ) : (
+        <>
+          {/* <p>Please Login: </p> */}
           <label htmlFor="username">Username: </label>
           <input
             type="text"
@@ -51,17 +70,13 @@ const ClassLogin = () => {
           <br />
           <button
             className="add-blank-button"
-            onClick={() =>
-              fetchLogin(dispatch, loginState)
-            }
+            onClick={() => fetchLogin(dispatch, loginState)}
           >
             Login
           </button>
           <button
             className="add-blank-button"
-            onClick={() =>
-              register(dispatch, loginState)
-            }
+            onClick={() => register(dispatch, loginState)}
           >
             Register
           </button>
