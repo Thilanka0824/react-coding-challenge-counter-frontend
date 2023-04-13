@@ -2,6 +2,8 @@ import React, { useContext, useState } from "react";
 import { LoginContext, LoginDispatchContext } from "../context/LoginContext";
 // import { ThemeContext } from "../context/ThemeContext";
 import { checkAuthToken } from "../lib/checkAuthToken";
+import { AuthContext } from "../context/AuthContext";
+import { AuthDispatchContext } from "../context/AuthContext";
 import {
   fetchLogin,
   register,
@@ -14,6 +16,8 @@ const ClassLogin = () => {
   //   const theme = useContext(ThemeContext);
   const login = useContext(LoginContext);
   const dispatch = useContext(LoginDispatchContext);
+  const auth = useContext(AuthContext);
+  const authDispatch = useContext(AuthDispatchContext);
 
   const [loginState, setLoginState] = useState({
     username: "",
@@ -34,21 +38,21 @@ const ClassLogin = () => {
   return (
     <div className="login-card">
       <h3>Message: {login.message}</h3>
-      {login.isAuth ? (
+      {auth.isAuth ? (
         <>
           <h3>Username: {login.username}</h3>
           <h3>Password: {login.password}</h3>
           <button
             className="add-blank-button"
             onClick={() =>
-             logout(dispatch)
+             logout(dispatch, authDispatch)
             }
           >
             Logout
           </button>
           <button
             className="add-blank-button"
-            onClick={() => deleteUser(dispatch, login.username)}
+            onClick={() => deleteUser(dispatch, login.username, authDispatch)}
           >
             Delete Me!
           </button>
@@ -74,13 +78,13 @@ const ClassLogin = () => {
           <br />
           <button
             className="add-blank-button"
-            onClick={() => fetchLogin(dispatch, loginState)}
+            onClick={() => fetchLogin(dispatch, loginState, authDispatch)}
           >
             Login
           </button>
           <button
             className="add-blank-button"
-            onClick={() => register(dispatch, loginState)}
+            onClick={() => register(dispatch, loginState, authDispatch)}
           >
             Register
           </button>

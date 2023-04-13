@@ -1,4 +1,5 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
+import { checkAuthToken } from "../lib/checkAuthToken";
 
 export const AuthContext = createContext(null);
 export const AuthDispatchContext = createContext(null);
@@ -16,8 +17,20 @@ The reducer will update the state, and the state will be passed down to the chil
 
 The children will be re-rendered, and the children will receive the updated state.
 */
+// checkAuthToken();
 export const AuthProvider = ({ children }) => {
-  const [auth, dispatch] = useReducer(authReducer, initialState);
+    const [auth, dispatch] = useReducer(authReducer, initialState);
+    // this useEffect will run when the component mounts, and it will check if there is a token in the local storage, if there is, it will dispatch an action to the reducer, and the reducer will update the state, and the state will be passed down to the children, and the children will be re-rendered, and the children will receive the updated state.
+    useEffect(() => {
+        let authy = checkAuthToken();
+        
+        if (authy) {
+            dispatch({ type: "AUTH_SUCCESS" });
+        } else {
+            dispatch({ type: "AUTH_FAIL" });
+        }
+
+        }, []);
 
   return (
     <AuthContext.Provider value={auth}>
@@ -27,8 +40,21 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-//this is the reducer
-// th
+
+//this is the auth reducer
 const authReducer = (state, action) => {
-  return action.data;
+  switch (action.type) {
+    case "AUTH_SUCCESS":
+      return {
+        isAuth: true,
+      };
+    case "AUTH_FAIL":
+      return {
+        isAuth: false,
+      };
+    default:
+      return {
+        isAuth: false,
+      };
+  }
 };
