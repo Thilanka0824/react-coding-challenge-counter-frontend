@@ -1,13 +1,16 @@
 import React, { useContext, useState } from "react";
 import { LoginContext, LoginDispatchContext } from "../context/LoginContext";
 // import { ThemeContext } from "../context/ThemeContext";
+import { checkAuthToken } from "../lib/checkAuthToken";
 import {
   fetchLogin,
   register,
   deleteUser,
+  logout,
 } from "../context/LoginContextHelper";
 
 const ClassLogin = () => {
+  checkAuthToken();
   //   const theme = useContext(ThemeContext);
   const login = useContext(LoginContext);
   const dispatch = useContext(LoginDispatchContext);
@@ -24,6 +27,10 @@ const ClassLogin = () => {
     });
   };
 
+  // const checkAuth = () => {
+    
+  // }
+  // checkAuth()
   return (
     <div className="login-card">
       <h3>Message: {login.message}</h3>
@@ -34,10 +41,7 @@ const ClassLogin = () => {
           <button
             className="add-blank-button"
             onClick={() =>
-              dispatch({
-                type: "LOGOUT",
-                data: loginState,
-              })
+             logout(dispatch)
             }
           >
             Logout

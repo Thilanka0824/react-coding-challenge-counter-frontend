@@ -8,10 +8,17 @@ export const fetchLogin = async (dispatch, loginData) => {
     // let success = await response.json(); // fetch problem + solution
     console.log(response.status, response.data);
     console.log("(response.data.userOBJ)", response.data.userOBJ);
+    //-----------------//
+    // this is setting the token in localStorage
+    localStorage.setItem('jwtToken', response.data.token);
+
 
     dispatch({
       type: "LOGIN",
-      data: response.data.userOBJ,
+      data: {
+        userOBJ: response.data.userOBJ,
+        token: response.data.token,
+      },
     });
   } catch (error) {
     if (error.response) {
@@ -62,11 +69,19 @@ export const register = async (dispatch, newData) => {
 };
 
 export const deleteUser = async (dispatch, username) => {
-  let response = await Axios.post('/users/delete-user', username)
-  console.log(response)
+  let response = await Axios.post("/users/delete-user", { username: username });
+  console.log(response);
+  localStorage.removeItem("jwtToken"); // remove the token from local storage
 
   dispatch({
     type: "DELETE",
     data: { message: response.data.message },
   });
 };
+
+export const logout = async (dispatch) => {
+  localStorage.removeItem('jwtToken'); // remove the token from local storage
+  dispatch({
+    type: "LOGOUT",
+  });
+}

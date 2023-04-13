@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 // import { fetchLogin } from "./loginContextHelper";
 
 export const LoginContext = createContext(null);
@@ -33,9 +33,10 @@ const loginReducer = (login, action) => {
       login.isAuth = false;
 
       return {
-        ...action.data,
+        ...action.data.userOBJ,
         isAuth: true,
-        message: `Thank you for logging in ${action.data.username}`,
+        message: `Thank you for logging in ${action.data.userOBJ.username}`,
+        token: action.data.token,
       };
 
     case "LOGOUT":

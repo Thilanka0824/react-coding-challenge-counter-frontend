@@ -14,6 +14,7 @@ import HomeworkUseReducerApi from "./pages/HomeworkUseReducerApi";
 import { LoginContextPage } from "./pages/LoginContextPage";
 import ClassLoginPage from "./pages/ClassLoginPage";
 
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -71,7 +72,9 @@ function App() {
 
   return (
     <div className="App App-header">
+
       <RouterProvider router={router} />
+    
     </div>
   );
 }
